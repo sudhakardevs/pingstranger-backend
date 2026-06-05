@@ -18,12 +18,7 @@ const io = new Server(server, {
 let waitingUser = null; // Keeps track of a single user waiting for a match
 const pairs = new Map(); // Tracks active chats: Map(socketId -> partnerSocketId)
 
-const io = new Server(server, {
-  cors: {
-    origin: "*", // Allows any live frontend to handshake with your server
-    methods: ["GET", "POST"]
-  }
-});
+
   // 1. MATCHMAKING REQUEST
   socket.on('find_stranger', () => {
     // If the user is already in a chat, disconnect them first
